@@ -1,0 +1,117 @@
+@import "../vars";
+@import "../colors";
+
+.blog-article {
+  margin-bottom: 15px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+  &__list-item {
+    margin-bottom: 16px;
+    margin-right: 20px;
+
+    max-width: 380px;
+
+    list-style-type: none;
+
+    @include media_interval($media_tablet, $media_4k) {
+      &:nth-child(3n + 3) {
+        margin-right: 0;
+      }
+    }
+
+    @include media_interval($media_tablet, $media_laptop) {
+      max-width: 285px;
+    }
+
+    @include media_interval($media_mobile, $media_tablet) {
+      max-width: 314px;
+
+      margin-bottom: 10px;
+
+      &:nth-child(2n + 2) {
+        margin-right: 0;
+      }
+    }
+
+    @include media_interval(0, $media_mobile) {
+      margin: auto 0;
+    }
+  }
+
+  &__img {
+    margin-bottom: 16px;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      margin-bottom: 11px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      margin-bottom: 3px;
+    }
+  }
+  &__date {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+
+    display: block;
+
+    color: $c_gray-2;
+
+    @include media_interval(0, $media_mobile) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+
+    color: $c_black--light;
+
+    margin: 11px 0 15px 0px;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      margin: 5px 0 12px 0px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      font-size: 18px;
+      line-height: 22px;
+
+      margin: 4px 0 8px;
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  &__text {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+
+    color: $c_black--light;
+
+    margin: 0 0 20px 0;
+
+    @include media_interval(0, $media_mobile) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}

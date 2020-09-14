@@ -1,0 +1,48 @@
+@@include('breadcrumbs-title/index.html', {
+"title": "category products",
+"page": "Catalog"
+})
+
+<section class="category-products">
+    <div class="container">
+        <h2 class="visually-hidden">category-products</h2>
+        <ul class="category-products__list">
+            @@include("category-catalog/category-product.html",{
+            "title": "apparel kids",
+            "src": "1",
+            "alt": "apparel_kids",
+            "link": "#"
+            })
+            @@include("category-catalog/category-product.html",{
+            "title": "holiday shop",
+            "src": "2",
+            "alt": "holiday_shop",
+            "link": "#"
+            })
+            @@include("category-catalog/category-product.html",{
+            "title": "toys",
+            "src": "3",
+            "alt": "toys",
+            "link": "/pages/toys/index.html"
+            })
+            @@include("category-catalog/category-product.html",{
+            "title": "accessories",
+            "src": "4",
+            "alt": "accessories",
+            "link": "#"
+            })
+            @@include("category-catalog/category-product.html",{
+            "title": "sale",
+            "src": "5",
+            "alt": "sale",
+            "link": "#"
+            })
+            @@include("category-catalog/category-product.html",{
+            "title": "apparel adults",
+            "src": "6",
+            "alt": "apparel adults",
+            "link": "#"
+            })
+        </ul>
+    </div>
+</section>

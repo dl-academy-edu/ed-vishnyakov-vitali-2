@@ -1,0 +1,197 @@
+@import "../vars";
+@import "../colors";
+
+.design-contacts {
+  margin-bottom: 147px;
+
+  @include media_interval($media_mobile, $media_tablet) {
+    margin-bottom: 125px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: start;
+
+    @include media_interval(0, $media_mobile) {
+      flex-direction: column;
+    }
+  }
+
+  .design-block {
+    max-width: 543px;
+
+    margin-right: 60px;
+
+    padding: 0 30px 43px;
+
+    background-color: $c_blue--light;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      max-width: 314px;
+
+      margin-right: 20px;
+
+      padding: 7px 0px 44px 15px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      margin: 0 -20px 49px;
+
+      padding: 10px 20px 34px 20px;
+    }
+
+    &__title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 38px;
+      line-height: 46px;
+
+      color: $c_black--light;
+
+      margin: -25px 0 13px;
+
+      @include media_interval($media_mobile, $media_tablet) {
+        font-size: 30px;
+        line-height: 37px;
+
+        margin-bottom: 16px;
+      }
+
+      @include media_interval(0, $media_mobile) {
+        font-size: 24px;
+        line-height: 29px;
+
+        margin-bottom: 12px;
+      }
+    }
+
+    &__aboutus-title {
+      font-family: "Crimson Text", serif;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 32px;
+
+      color: $c_black--light;
+
+      margin: 0 0 10px;
+
+      @include media_interval($media_mobile, $media_tablet) {
+        margin: 0 0 9px;
+      }
+
+      @include media_interval(0, $media_mobile) {
+        margin-bottom: 8px;
+      }
+    }
+
+    &__paragraph {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      font-style: normal;
+
+      color: $c_black--light;
+
+      margin: 0 0 30px;
+
+      max-width: 480px;
+
+      @include media_interval($media_mobile, $media_tablet) {
+        max-width: 455px;
+        margin: 0 30px 31px 0;
+      }
+
+      @include media_interval(0, $media_mobile) {
+        font-size: 14px;
+        line-height: 19px;
+
+        margin-bottom: 27px;
+      }
+    }
+
+    &__link {
+      @include media_interval($media_mobile, $media_tablet) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .contacts-block {
+    max-width: 543px;
+
+    padding: 0 30px 82px;
+
+    background-color: $c_blue--light;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      max-width: 314px;
+      padding: 7px 18px 76px 14px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      margin: 0 -20px;
+      padding: 11px 20px 98px 20px;
+    }
+
+    &__title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 38px;
+      line-height: 46px;
+
+      margin: -25px 0 20px;
+
+      @include media_interval($media_mobile, $media_tablet) {
+        font-size: 30px;
+        line-height: 37px;
+
+        margin-bottom: 23px;
+      }
+
+      @include media_interval(0, $media_mobile) {
+        font-size: 24px;
+        line-height: 29px;
+
+        margin-bottom: 12px;
+      }
+    }
+
+    &__paragraph {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 23px;
+
+      margin: 0 0 20px 0;
+
+      max-width: 483px;
+
+      @include media_interval($media_mobile, $media_tablet) {
+        max-width: 455px;
+      }
+
+      @include media_interval(0, $media_mobile) {
+        font-size: 14px;
+        line-height: 19px;
+
+        margin-bottom: 17px;
+      }
+    }
+
+    &__map {
+      position: relative;
+
+      &-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 194px;
+
+        @include media_interval($media_mobile, $media_tablet) {
+          height: 151px;
+        }
+      }
+    }
+  }
+}

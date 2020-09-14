@@ -1,10 +1,30 @@
-<header>
+<header class="header">
   <div class="container">
-    <span class="title-block title-block_one">
-      Header
-    </span>
-    <a href="/">Главная</a>
-    <a href="/pages/catalog">Каталог</a>
-    <a href="/pages/toys">Игрушки</a>
+    <div class="header__wrapper">
+      <a class="header__logo" href="/index.html">
+        <img class="header__logo-img" src="/static/images/logo.svg" alt="logo">
+      </a>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a class="header__nav-link" href="/pages/blog/index.html">blog</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="/pages/catalog/index.html">catalog</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="#">about us</a></li>
+          <li class="header__nav-item"><a class="header__nav-link" href="/pages/animation/index.html">animation</a>
+          <li class="header__nav-item"><a class="header__nav-link" href="/pages/svg/index.html">svg</a>
+          <li class="header__nav-item"><a class="header__nav-link" href="/pages/grid/index.html">grid</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="open-menu js-button-open-menu">Menu</button>
+      <button class="close-menu"></button>
+      <ul class="header__nav-info">
+        <li class="header__nav-info--SEARCH">
+          <button class="header__search"><img class="header__search-img" src="/static/images/search.png" alt="search"></button>
+        </li>
+        <li class="header__nav-info--CONTACTS">
+          <a class="header__nav-info--LINK" href="/pages/contact-us/index.html">contact us</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </header>

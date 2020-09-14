@@ -1,0 +1,165 @@
+@import "../vars";
+@import "../colors";
+
+.products {
+  margin-bottom: 30px;
+
+  @include media_interval($media_mobile, $media_tablet) {
+    margin-bottom: 15px;
+  }
+
+  @include media_interval(0, $media_mobile) {
+    margin-bottom: 17px;
+  }
+
+  &__list {
+    list-style-type: none;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0;
+
+    margin-top: 0;
+
+    @include media_interval(0, $media_mobile) {
+      align-items: flex-end;
+    }
+  }
+
+  &__list-item {
+    max-width: 380px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    @include media_interval($media_tablet, $media_4k) {
+      &:nth-child(3n + 3) {
+        margin-right: 0;
+      }
+    }
+
+    @include media_interval($media_tablet, $media_laptop) {
+      max-width: 286px;
+      max-height: 388px;
+    }
+
+    @include media_interval($media_mobile, $media_tablet) {
+      max-width: 203px;
+      max-height: 288px;
+
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      max-width: 160px;
+      max-height: 247px;
+
+      margin-right: 15px;
+      margin-bottom: 15px;
+
+      &:nth-child(2n + 2) {
+        margin-right: 0;
+      }
+    }
+
+    &:hover .products__card-hover {
+      background-color: $c_blue--purple;
+      opacity: 0.9;
+    }
+
+    &:active .products__card-hover {
+      background-color: $c_blue--purple;
+      opacity: 0.67;
+    }
+  }
+
+  &__card-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+
+    display: flex;
+    width: 207px;
+    height: 207px;
+
+    transition: $tr_duration $tr_easing;
+  }
+
+  &__item-link {
+    position: relative;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 27px;
+  }
+
+  &__hover-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 29px;
+    color: $c_black--light;
+    text-transform: uppercase;
+
+    margin: auto;
+  }
+
+  &__name {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $c_black--light;
+
+    margin-bottom: 20px;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      font-size: 12px;
+      line-height: 16px;
+
+      margin-bottom: 7px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__price {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $c_black--light;
+
+    margin: 0 0 25px 0;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      font-size: 12px;
+      line-height: 16px;
+
+      margin: 0;
+    }
+  }
+}

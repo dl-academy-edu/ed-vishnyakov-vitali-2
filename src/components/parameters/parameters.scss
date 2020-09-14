@@ -1,0 +1,459 @@
+@import "../vars";
+@import "../colors";
+
+.parameters {
+  width: 100%;
+
+  background-color: $c_blue--purple;
+
+  margin-bottom: 60px;
+
+  @include media_interval($media_mobile, $media_tablet) {
+    margin-bottom: 50px;
+  }
+
+  @include media_interval(0, $media_mobile) {
+    margin-bottom: 40px;
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-top: 41px;
+    padding-bottom: 42px;
+
+    align-items: start;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      padding-top: 29px;
+      padding-bottom: 31px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+
+  &__fieldset {
+    border: none;
+
+    padding: 0;
+  }
+
+  &__name {
+    font-family: "Open Sans", sans-serif;
+    color: $c_black;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+
+    @include media_interval(0, $media_mobile) {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  &__label {
+    font-family: "Open Sans", sans-serif;
+    color: $c_black;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+
+    @include media_interval(0, $media_mobile) {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  .fieldset-cost {
+    max-width: 206px;
+    margin-right: 106px;
+
+    margin-left: 0;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      margin-right: 87px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      margin-bottom: 27px;
+    }
+
+    &__range-input {
+      margin: 26px 0 16px 5px;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 188px;
+      background: transparent;
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+      }
+      &:focus {
+        outline: none;
+      }
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 8.35px solid $c_gold;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background: $c_white;
+        cursor: pointer;
+        margin-top: -10px;
+      }
+      &::-ms-thumb {
+        border: 8.35px solid $c_gold;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background: $c_white;
+        cursor: pointer;
+      }
+      &::-webkit-slider-runnable-track {
+        width: 188px;
+        height: 4px;
+        cursor: pointer;
+        background: $c_gray--dark;
+      }
+      &::-ms-track {
+        width: 195px;
+        height: 4px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 24px 0;
+        color: transparent;
+      }
+      &::-ms-fill-lower {
+        background: $c_gray--dark;
+      }
+      &:focus::-ms-fill-lower {
+        background: $c_gold;
+      }
+      &::-ms-fill-upper {
+        background: $c_gray--dark;
+      }
+      &:focus::-ms-fill-upper {
+        background: $c_gold;
+      }
+
+      @include media_interval(0, $media_tablet) {
+        width: 184px;
+      }
+
+      @include media_interval(0, $media_mobile) {
+        margin-top: 21px;
+        margin-bottom: 11px;
+        margin-left: 5px;
+      }
+    }
+
+    &__scale {
+      font-family: "Open Sans", sans-serif;
+      color: $c_black;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+
+      @include media_interval(0, $media_mobile) {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+
+    &__scale-right {
+      float: right;
+      margin-right: -13px;
+    }
+  }
+
+  .fieldset-color {
+    margin-right: 122px;
+    margin-left: 0;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      margin-right: 90px;
+    }
+
+    @include media_interval(0, $media_mobile) {
+      margin-right: 110px;
+      margin-bottom: 27px;
+    }
+
+    &__list {
+      list-style-type: none;
+    }
+
+    &__list-item {
+      margin-top: 14px;
+
+      @include media_interval(0, $media_mobile) {
+        margin-top: 10px;
+      }
+    }
+
+    &__checkbox {
+      display: none;
+      &:checked + .fieldset-color__fake::before {
+        opacity: 1;
+      }
+    }
+
+    &__fake {
+      display: inline-block;
+
+      width: 19px;
+      height: 19px;
+
+      border: 2px solid $c_gold;
+      box-sizing: border-box;
+      border-radius: 3px;
+
+      position: relative;
+
+      margin-right: 6px;
+
+      @include media_interval(0, $media_mobile) {
+        width: 17px;
+        height: 17px;
+
+        margin-right: 3px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 40%;
+        left: 51%;
+        transform: translate(-50%, -50%);
+
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url(static/images/Vector_1.svg);
+        background-repeat: no-repeat;
+        background-size: 16px 14px;
+
+        opacity: 0;
+        transition: $tr_duration $tr_easing;
+      }
+    }
+
+    .parameters__label input:checked ~ .fieldset-color__fake {
+      background-color: $c_white;
+    }
+
+    &__label:hover {
+      text-decoration: underline;
+    }
+
+    &__label,
+    &__fake {
+      vertical-align: middle;
+
+      cursor: pointer;
+    }
+  }
+
+  .fieldset-delivery {
+    margin-right: 67px;
+
+    @include media_interval(0, $media_mobile) {
+      margin-right: 0;
+    }
+
+    &__list {
+      list-style-type: none;
+
+      padding: 0;
+
+      margin: 14px 0 0 0;
+
+      @include media_interval(0, $media_mobile) {
+        margin: 12px 0 0 0;
+      }
+    }
+
+    &__item {
+      margin-bottom: 9px;
+      cursor: pointer;
+
+      @include media_interval(0, $media_mobile) {
+        margin-bottom: 12px;
+      }
+    }
+
+    &__radio {
+      display: none;
+      &:checked + .fieldset-delivery__fake::before {
+        opacity: 1;
+      }
+    }
+
+    &__fake {
+      display: inline-block;
+
+      width: 20px;
+      height: 20px;
+
+      border: 2px solid $c_gold;
+      box-sizing: border-box;
+      border-radius: 50%;
+
+      position: relative;
+
+      margin-right: 6px;
+
+      @include media_interval(0, $media_mobile) {
+        width: 16px;
+        height: 16px;
+
+        margin-right: 4px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+
+        display: block;
+        width: 12px;
+        height: 12px;
+
+        border: 6px solid $c_gold;
+        box-sizing: border-box;
+        border-radius: 50%;
+
+        opacity: 0;
+        transition: $tr_duration $tr_easing;
+
+        @include media_interval(0, $media_mobile) {
+          width: 10px;
+          height: 10px;
+
+          top: 1.5px;
+          left: 1px;
+
+          border: 5px solid $c_gold;
+        }
+      }
+    }
+
+    &__label:hover {
+      text-decoration: underline;
+    }
+
+    &__label,
+    &__fake {
+      vertical-align: middle;
+
+      cursor: pointer;
+    }
+  }
+
+  .fieldset-amount {
+    margin-right: 60px;
+    margin-left: 0;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      margin: 21px 209px 0 0;
+    }
+
+    &__list {
+      overflow: hidden;
+
+      position: relative;
+
+      padding: 0;
+
+      background-color: $c_white;
+
+      text-align: center;
+
+      margin-top: 15px;
+      margin-bottom: 0;
+
+      @include media_interval(0, $media_mobile) {
+        margin-top: 11px;
+      }
+    }
+
+    &__item {
+      float: left;
+    }
+
+    &__list input {
+      display: none;
+
+      &:checked + label {
+        background-color: $c_pink;
+
+        transition: $tr_duration $tr_easing;
+      }
+    }
+
+    &__list label {
+      width: 80px;
+
+      display: inline-block;
+
+      line-height: 34px;
+
+      border-right: none;
+
+      user-select: none;
+
+      @include media_interval(0, $media_mobile) {
+        line-height: 28px;
+      }
+
+      @include media_interval(0, $media_mobile-extra-small) {
+        width: 70px;
+      }
+
+      &:hover {
+        color: $c_brown;
+        background-color: $c_pink--light;
+
+        text-decoration: none;
+
+        cursor: pointer;
+
+        transition: $tr_duration $tr_easing;
+      }
+    }
+
+    &__label,
+    &__fake {
+      vertical-align: middle;
+    }
+  }
+
+  &__button {
+    margin-top: 37px;
+
+    @include media_interval($media_mobile, $media_tablet) {
+      margin-top: 52px;
+    }
+
+    @include media_interval($media_mobile-extra-small, $media_mobile) {
+      margin-top: 25px;
+      margin-left: 120px;
+
+      padding: 9px 22px;
+
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @include media_interval(0, $media_mobile-extra-small) {
+      margin-left: 0;
+    }
+  }
+}
